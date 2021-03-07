@@ -4,8 +4,8 @@
 const attempts = 7;
 // Choice a word in an array with function Random
 var word;
- // Word to find
- var wordToFind;
+// Word to find
+var wordToFind;
 // Declare an array of words to find
 let words = [
     "FEUILLES",
@@ -17,7 +17,7 @@ let words = [
 
 // Declare an array of allowed letters
 let allowedLetters = [
-    "J",
+    "P",
     "R",
     "Q"
 ]
@@ -64,7 +64,7 @@ function enterLetter() {
 function displayFoundLetters(lt) {
     for (let i = 0; i <= word.length - 1; i++) {
         if (word[i] === lt) {
-            // wordToFind[i] = letter; Ne marche pas
+            // wordToFind[i] = lt; Ne marche pas
             wordToFind = wordToFind.substring(0, i) + lt + wordToFind.substring(i + 1);
         }
     }
@@ -104,10 +104,10 @@ function beginGame() {
 do {
     var choice = "";
     do {
-        choice = prompt("- J : Jouer\n- R : Règles\n- Q : Quitter").toUpperCase();
+        choice = prompt("- P : Play\n- R : Rules\n- Q : Quit").toUpperCase();
     } while (!allowedLetters.join().includes(choice));
     switch (choice) {
-        case "J":
+        case "P":
             beginGame();
             break;
         case "R":
